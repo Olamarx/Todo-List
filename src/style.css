@@ -1,3 +1,165 @@
-.hello {
-    color: red;
-}
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  i {
+    cursor: pointer;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 70vh; */
+  }
+  
+  main {
+    margin-top: 30px;
+    box-shadow: 1px 5px 18px grey, 1px 5px 18px grey;
+    width: 50%;
+  }
+  
+  .main__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    align-items: center;
+  }
+  
+  #to-do-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .form-class {
+    width: 90%;
+    min-width: 100px;
+    border: 0;
+    height: 50px;
+    border-radius: 10px;
+  
+  }
+  
+  .display-to-do {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 1 0%;
+  }
+  
+  
+  
+  
+  .to-do-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    align-items: center;
+  }
+  
+  .div-left {
+    width: 90%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px 40px;
+  }
+  
+  .footer__btn {
+    padding: 10px 15px;
+    font-size: 20px;
+  }
+  
+  .what-to-do {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 80%;
+  }
+  
+  .text {
+    border: none;
+    outline: none;
+    overflow: visible;
+    height: 30px;
+    font-size: 15px;
+    width: 80%;
+    border-radius: 5px;
+    min-width: 30px;
+  }
+  
+  .text.active {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  .fa-ellipsis-v {
+    opacity: 0.8;
+    display: flex;
+    margin-right: 8px;
+    z-index: 10;
+  }
+  .fa-ellipsis-v.active {
+  display: none;  
+  }
+  .edit {
+    background-color: blue;
+    color: white;
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+  }
+  .del-btn {
+  color: red;
+  }
+  
+  .edit, .del-btn {
+    display: none;
+  }
+  .edit.active, .del-btn.active{
+    display: block;
+  }
+  
+  
+  
+  /* .div-left {
+    display: flex;
+    justify-content: center;
+  } */
+  
+  /* .what-to-do:focus {
+    background-color: beige;
+  } */
+  

@@ -5,11 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>To-Do List</title>
+    <script src="https://kit.fontawesome.com/7cbe454c49.js" crossorigin="anonymous"></script>
 <script defer src="bundle.js"></script></head>
 
 <body>
-    <div class="hello">We gonna move now</div>
+    <main>
+        <div class="main">
+            <div class="main__header">
+                <h1 class="main__h1">Today's To Do</h1>
+                <i class="fa fa-refresh clear"></i>
+            </div>
+
+            <div id="to-do-form">
+                <input type="text" name="to-do-input" id="input" class="form-class" placeholder="Add to your list..."
+                    required>
+                <i class="fas fa-arrow-circle-left" id="input-text"></i>
+            </div>
+
+            <ul class="display-to-do" id="list">
+
+            </ul>
+
+        </div>
+
+        <div class="footer">
+            <button type="submit" class="footer__btn">
+                Clear all completed
+            </button>
+        </div>
+    </main>
 </body>
 
 </html>
