@@ -7,7 +7,7 @@ export default class LocalStorageClass {
         if(!localStorage.getItem('Todo')) {
             TodoArray = [];
         } else {
-            TodoArray = JSON.parse(localStorage.getItem('Todo'))
+            TodoArray = JSON.parse(localStorage.getItem('Todo'));
         }
         return TodoArray;
     }
@@ -15,20 +15,20 @@ export default class LocalStorageClass {
     //Add to the Local Storage Array
     static addTodo(todo) {
         const arr = LocalStorageClass.getTodo();
-        arr.push(todo)
+        arr.push(todo);
         localStorage.setItem('Todo', JSON.stringify(arr));
     }
 
     // Delete Task From the Local Storage
-    static deleteTodo(lastDescr) {
-        const arr = LocalStorageClass.getTodo();
-        arr.forEach((todo, index) => {
-            if (lastDescr === todo.task){
-                arr.splice(index, 1)
-                LocalStorageClass.updateIndex(arr)
-            }
-        })
-        localStorage.setItem('Todo', JSON.stringify(arr))
+  static deleteTodo(lastDescr) {
+    const arr = LocalStorageClass.getTodo();
+    arr.forEach((todo, index) => {
+      if (lastDescr === todo.task){
+        arr.splice(index, 1);
+        LocalStorageClass.updateIndex(arr);
+      }
+        });
+        localStorage.setItem('Todo', JSON.stringify(arr));
     }
 
     // update local storage
@@ -36,7 +36,7 @@ export default class LocalStorageClass {
         arr.forEach((todo, index) => {
             todo.index = index + 1;
         });
-        localStorage.setItem('Todo', JSON.stringify(arr))
+        localStorage.setItem('Todo', JSON.stringify(arr));
     }
 
 
