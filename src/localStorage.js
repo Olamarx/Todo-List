@@ -18,7 +18,6 @@ export default class LocalStorageClass {
         arr.push(todo);
         localStorage.setItem('Todo', JSON.stringify(arr));
     }
-
     // Delete Task From the Local Storage
   static deleteTodo(lastDescr) {
     const arr = LocalStorageClass.getTodo();
@@ -30,7 +29,6 @@ export default class LocalStorageClass {
         });
         localStorage.setItem('Todo', JSON.stringify(arr));
     }
-
     // update local storage
     static updateIndex(arr) {
         arr.forEach((todo, index) => {
@@ -38,6 +36,4 @@ export default class LocalStorageClass {
         });
         localStorage.setItem('Todo', JSON.stringify(arr));
     }
-
-
 }

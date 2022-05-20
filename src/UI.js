@@ -23,4 +23,10 @@ export default class UI {
     static clearField() {
         document.querySelector('#input').value = '';
     }
+
+    static deleteTodo(element) {
+        if (element.classList.contains('del-btn')) {
+            element.parentElement.remove();
+        }
+    }
     }
