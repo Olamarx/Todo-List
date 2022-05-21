@@ -56,8 +56,8 @@ document.querySelector('#list').addEventListener('click', (e) => {
     }
 
     if (targetE.classList.contains('del-btn')) {
-        console.log(targetE.parentElement.children[2])
         UI.deleteTodo(targetE.parentElement.children[2])
+        LocalStorageClass.deleteTodo(targetE.parentElement.children[0].children[1].value)
     }
 
 })
