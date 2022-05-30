@@ -1,7 +1,6 @@
 /* eslint-disable */
 import _ from 'lodash';
 import './style.css';
-
 const content = [
     {todo: 'I will carry the whole bag tomorrow'},
     {todo: 'I will not do anything in two days'},
