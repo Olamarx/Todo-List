@@ -24,6 +24,6 @@ const li = `<li class="to-do-list">
     </div>
     <i class="fas fa-ellipsis-v options"></i>
     <i class="fa fa-trash-o de del-btn"></i>
-</li>`
+< /li>`
 document.querySelector('#list').insertAdjacentHTML('afterbegin', li)
 }
