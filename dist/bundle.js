@@ -136,7 +136,51 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* eslint-disable */\r\n\r\n\r\nconst content = [\r\n    {todo: 'I will carry the whole bag tomorrow'},\r\n    {todo: 'I will not do anything in two days'},\r\n    {todo: 'I will learn Javascript better each day'},\r\n    {todo: 'Make sure you use the class method'},\r\n    {todo: 'Oh, na, na what\\'s my name'},\r\n    {todo: 'You gat something that keeps me offbalance'},\r\n    {todo: 'Baby, you got me and I surrender'},\r\n    {todo: 'Hey boy, i wanna see if you can go downtown with me.'},\r\n    {todo: 'You are so amazing and you know that'},\r\n    {todo: 'Not everybody knows how to walk my body'},\r\n    {todo: 'So I surrender to you because you are just my type.'},\r\n]\r\n\r\nfor (let each of content) {\r\n    \r\nconst li = `<li class=\"to-do-list\">\r\n    <div class=\"div-left\">\r\n    <input type=\"checkbox\" class=\"checker\" id=\"checker\">\r\n    <input type=\"text\" class=\"text\" value=\"${each.todo}\">\r\n    </div>\r\n    <i class=\"fas fa-ellipsis-v options\"></i>\r\n    <i class=\"fa fa-trash-o de del-btn\"></i>\r\n< /li>`\r\ndocument.querySelector('#list').insertAdjacentHTML('afterbegin', li)\r\n}\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_logicToDisplay_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/logicToDisplay.js */ \"./src/modules/logicToDisplay.js\");\n/* eslint-disable */\r\n\r\n\r\n\r\n\r\n_modules_logicToDisplay_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].loadUponReload()\r\n_modules_logicToDisplay_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].enterFunc()\r\n_modules_logicToDisplay_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].clickFunct()\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/UI.js":
+/*!***************************!*\
+  !*** ./src/modules/UI.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ UI)\n/* harmony export */ });\n/* harmony import */ var _localStorage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./localStorage.js */ \"./src/modules/localStorage.js\");\n\r\n\r\nclass UI {\r\n    static loadLocalStoreAndDisplayHTML = () => {\r\n        const array = _localStorage_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].takingFromStorage();\r\n        array.forEach((element) => {\r\n            UI.DisplayHTML(element)\r\n        })\r\n    }\r\n\r\n    static DisplayHTML = (array) => {\r\n        const li = `<li class=\"to-do-list\">\r\n            <div class=\"div-left\">\r\n            <input type=\"checkbox\" class=\"checker\" id=\"checker\">\r\n            <input type=\"text\" class=\"text\" value=\"${array.task}\">\r\n            </div>\r\n            <i class=\"fas fa-ellipsis-v options\"></i>\r\n            <i class=\"fa fa-trash-o de del-btn\" id=\"${array.index}\" ></i>\r\n            </li>`\r\n            document.querySelector('#list').insertAdjacentHTML('afterbegin', li)\r\n        }\r\n\r\n    static clearField = () => {\r\n        document.querySelector('#input').value = '';\r\n    }\r\n\r\n    static deleteTodo = (element) => {\r\n        if (element.classList.contains('del-btn')) {\r\n            element.parentElement.remove();\r\n        }\r\n    }\r\n}\n\n//# sourceURL=webpack://todo-list/./src/modules/UI.js?");
+
+/***/ }),
+
+/***/ "./src/modules/localStorage.js":
+/*!*************************************!*\
+  !*** ./src/modules/localStorage.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Storage)\n/* harmony export */ });\nclass Storage {\r\n    static takingFromStorage() {\r\n      let library;\r\n      if (!localStorage.getItem('library')) {\r\n        library = [];\r\n      } else {\r\n        library = JSON.parse(localStorage.getItem('library'));\r\n      }\r\n      return library;\r\n    }\r\n  \r\n    static setLocalStorage(book) {\r\n      const library = Storage.takingFromStorage();\r\n      library.push(book);\r\n      localStorage.setItem('library', JSON.stringify(library));\r\n    }\r\n  \r\n    static removeFromLocalStorage(text) {\r\n      const library = Storage.takingFromStorage();\r\n      library.forEach((todo) => {\r\n        if (`${todo.task}`.trim() === text.trim()) {\r\n          library.splice(library.indexOf(todo), 1);\r\n        }\r\n      });\r\n      localStorage.setItem('library', JSON.stringify(library));\r\n    }\r\n  }\n\n//# sourceURL=webpack://todo-list/./src/modules/localStorage.js?");
+
+/***/ }),
+
+/***/ "./src/modules/logicToDisplay.js":
+/*!***************************************!*\
+  !*** ./src/modules/logicToDisplay.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Logic)\n/* harmony export */ });\n/* harmony import */ var _todoClass_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todoClass.js */ \"./src/modules/todoClass.js\");\n/* harmony import */ var _UI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UI.js */ \"./src/modules/UI.js\");\n/* harmony import */ var _localStorage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./localStorage.js */ \"./src/modules/localStorage.js\");\n\r\n\r\n\r\n\r\nclass Logic {\r\n    static loadUponReload = () => {\r\n        window.addEventListener('load', _UI_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].loadLocalStoreAndDisplayHTML())\r\n    }\r\n\r\n    static input = document.querySelector('#input')\r\n    static addFunc = () => {\r\n        \r\n        if (Logic.input.value) {\r\n        const Storage = _localStorage_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].takingFromStorage()\r\n        const task = Logic.input.value;\r\n        const index = Storage.length + 1;\r\n        const todoClass = new _todoClass_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"](task, index)\r\n        _UI_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].DisplayHTML(todoClass)\r\n        _localStorage_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].setLocalStorage(todoClass)\r\n        _UI_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].clearField()\r\n        }\r\n    }\r\n\r\n    static enterFunc = () => {\r\n        Logic.input.addEventListener('keypress', (e) => {\r\n            if (e.key === 'Enter') {\r\n                Logic.addFunc()\r\n            }\r\n        })\r\n    }\r\n\r\n    static clickFunct = () => {\r\n        const arrow = document.querySelector('#fa-arrow-circle-left');\r\n        arrow.addEventListener('click', () => {\r\n            Logic.addFunc()\r\n        })\r\n    }\r\n}\n\n//# sourceURL=webpack://todo-list/./src/modules/logicToDisplay.js?");
+
+/***/ }),
+
+/***/ "./src/modules/todoClass.js":
+/*!**********************************!*\
+  !*** ./src/modules/todoClass.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Todo)\n/* harmony export */ });\nclass Todo{\r\n    completed;\r\n    task;\r\n    index;\r\n    constructor(task, index, completed = false) {\r\n        this.task = task;\r\n        this.index = index;\r\n        this.completed = completed;\r\n    }\r\n}\n\n//# sourceURL=webpack://todo-list/./src/modules/todoClass.js?");
 
 /***/ })
 

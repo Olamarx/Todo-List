@@ -7,12 +7,11 @@ export default class Logic {
         window.addEventListener('load', UI.loadLocalStoreAndDisplayHTML())
     }
 
+    static input = document.querySelector('#input')
     static addFunc = () => {
-        const input = document.querySelector('#input')
-        
-        if (input.value) {
+        if (Logic.input.value) {
         const Storage = Store.takingFromStorage()
-        const task = input.value;
+        const task = Logic.input.value;
         const index = Storage.length + 1;
         const todoClass = new Todo(task, index)
         UI.DisplayHTML(todoClass)
@@ -21,7 +20,29 @@ export default class Logic {
         }
     }
 
-    static enterAndClick = () => {
-        const 
+    static enterFunc = () => {
+        Logic.input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                Logic.addFunc()
+            }
+        })
+    }
+
+    static clickFunct = () => {
+        const arrow = document.querySelector('.fa-arrow-circle-left');
+        arrow.addEventListener('click', () => {
+            Logic.addFunc()
+        })
+    }
+
+    static displayDelete = () => {
+        const array = document.querySelectorAll('.text')
+        Array.from(array).forEach(e => {
+            e.addEventListener('click', () => {
+                console.log('Active Ohhhhh')
+                const ellipsis = document.querySelector('.options')
+                ellipsis.classList.add('active')
+      
+        })      })
     }
 }
