@@ -66,20 +66,38 @@ export default class Logic {
     
      static edit = () => {
       const UL = document.querySelector('#list');
+
       UL.addEventListener('click', (e) => {
         if (e.target.classList.contains('edit')) {
-        const inputReadonly = e.target.parentElement.children[0].children[1];
+          const inputReadonly = e.target.parentElement.children[0].children[1];
         inputReadonly.removeAttribute('readonly');
         inputReadonly.focus()
         const editBtn = e.target.parentElement.children[3]
         editBtn.innerHTML = 'Save'
         editBtn.classList.add('save')
-        
-        if (editBtn.classList.contains('edit')) {
-          console.log('Working')
-        }
+        editBtn.classList.remove('edit')
       }
+      
+      
     })
+  
+
+    document.querySelectorAll('.text').forEach((input) => {
+      const editbtn = input.parentElement.parentElement.children[3];
+      editbtn.addEventListener('click', () => {
+      if (editbtn.classList.contains('save'))
+      console.log(editbtn)
+    })
+    })
+  
+  
   }
   
 }
+
+
+// document.querySelectorAll('.text').forEach((input) => {
+//   input.addEventListener('change', e => {
+//       const newTodo = e.target.parentElement.parentElement.children[0].children[1].value
+//       LocalStorageClass.EditTodo(formerInput, newTodo)
+//   })
