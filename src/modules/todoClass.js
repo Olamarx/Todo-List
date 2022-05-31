@@ -2,9 +2,9 @@ export default class Todo{
     completed;
     task;
     index;
-    constructor(task, completed = false, index) {
+    constructor(task, index, completed = false) {
         this.task = task;
-        this.completed = completed;
         this.index = index;
+        this.completed = completed;
     }
 }
