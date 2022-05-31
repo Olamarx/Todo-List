@@ -67,9 +67,10 @@ export default class Logic {
      static edit = () => {
       const UL = document.querySelector('#list');
 
+
       UL.addEventListener('click', (e) => {
+        const inputReadonly = e.target.parentElement.children[0].children[1];
         if (e.target.classList.contains('edit')) {
-          const inputReadonly = e.target.parentElement.children[0].children[1];
         inputReadonly.removeAttribute('readonly');
         inputReadonly.focus()
         const editBtn = e.target.parentElement.children[3]
@@ -78,17 +79,19 @@ export default class Logic {
         editBtn.classList.remove('edit')
       }
       
+      document.querySelectorAll('.text').forEach((input) => {
+        const editbtn = input.parentElement.parentElement.children[3];
+        editbtn.addEventListener('click', () => {
+        if (editbtn.classList.contains('save'))
+        console.log(inputReadonly.value)
+        const newtodo = e.target.parentElement.children[0].children[1].value
+        console.log(newtodo)
+      })
+      })
       
     })
-  
 
-    document.querySelectorAll('.text').forEach((input) => {
-      const editbtn = input.parentElement.parentElement.children[3];
-      editbtn.addEventListener('click', () => {
-      if (editbtn.classList.contains('save'))
-      console.log(editbtn)
-    })
-    })
+
   
   
   }
@@ -101,3 +104,14 @@ export default class Logic {
 //       const newTodo = e.target.parentElement.parentElement.children[0].children[1].value
 //       LocalStorageClass.EditTodo(formerInput, newTodo)
 //   })
+
+
+// static EditTodo(former, newInput) {
+//   const arr = LocalStorageClass.getTodo();
+//   arr.forEach((todo) => {
+//       if (former === todo.task) {
+//           todo.task = newInput
+//       }
+//   })
+//   localStorage.setItem('Todo', JSON.stringify(arr));
+// }
