@@ -36,13 +36,15 @@ export default class Logic {
     }
 
     static displayDelete = () => {
-        const array = document.querySelectorAll('.text')
-        Array.from(array).forEach(e => {
+        const UL = document.querySelector('#list')
+        UL.addEventListener('click', (e) => {
+
+            
             e.addEventListener('click', () => {
                 console.log('Active Ohhhhh')
                 const ellipsis = document.querySelector('.options')
                 ellipsis.classList.add('active')
-      
-        })      })
+        }) 
+    })
     }
 }
