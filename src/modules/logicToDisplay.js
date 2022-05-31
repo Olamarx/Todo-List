@@ -9,10 +9,19 @@ export default class Logic {
 
     static addFunc = () => {
         const input = document.querySelector('#input')
+        
+        if (input.value) {
         const Storage = Store.takingFromStorage()
         const task = input.value;
         const index = Storage.length + 1;
         const todoClass = new Todo(task, index)
-        
+        UI.DisplayHTML(todoClass)
+        Store.setLocalStorage(todoClass)
+        UI.clearField()
+        }
+    }
+
+    static enterAndClick = () => {
+        const 
     }
 }
