@@ -60,5 +60,26 @@ export default class Logic {
           });
         }
       });
-    }
+     }
+    
+    
+    
+     static edit = () => {
+      const UL = document.querySelector('#list');
+      UL.addEventListener('click', (e) => {
+        if (e.target.classList.contains('edit')) {
+        const inputReadonly = e.target.parentElement.children[0].children[1];
+        inputReadonly.removeAttribute('readonly');
+        inputReadonly.focus()
+        const editBtn = e.target.parentElement.children[3]
+        editBtn.innerHTML = 'Save'
+        editBtn.classList.add('save')
+        
+        if (editBtn.classList.contains('edit')) {
+          console.log('Working')
+        }
+      }
+    })
+  }
+  
 }

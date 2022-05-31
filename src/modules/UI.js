@@ -12,14 +12,15 @@ export default class UI {
       const li = `<li class="to-do-list">
             <div class="div-left">
             <input type="checkbox" class="checker" id="checker">
-            <input type="text" class="text" value="${array.task}">
+            <input type="text" class="text" value="${array.task}" readonly>
             </div>
             <i class="fas fa-ellipsis-v options"></i>
             <i class="fa fa-trash-o de del-btn" id="${array.index}" ></i>
+            <button class="edit"> Edit</button>
             </li>`;
-      document.querySelector('#list').insertAdjacentHTML('beforeend', li);
-    }
-
+            document.querySelector('#list').insertAdjacentHTML('beforeend', li);
+          }
+          
     static clearField = () => {
       document.querySelector('#input').value = '';
     }

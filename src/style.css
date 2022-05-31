@@ -139,11 +139,14 @@ h1 {
   border-radius: 10px;
 }
 
+.save{
+  background-color: green;
+}
+
 .del-btn {
   color: red;
 }
 
-.edit,
 .del-btn {
   display: none;
 }
