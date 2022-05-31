@@ -39,25 +39,13 @@ export default class Logic {
     static displayDelete = () => {
       const UL = document.querySelector('#list');
       UL.addEventListener('click', (e) => {
-        const { target } = e;
-        if (target.classList.contains('text')) {
-          const ellipsis = target.parentElement.parentElement.children[1];
-          const trash = target.parentElement.parentElement.children[2];
-          if (ellipsis) {
-            ellipsis.classList.add('active');
-            trash.classList.add('active');
-          }
-          Array.from(document.querySelector('#list').children).forEach((child) => {
-            if (e.target.children[1] && e.target.children[2]) {
-              child.children[1].classList.remove('active');
-              child.children[2].classList.remove('active');
-            }
-          });
-          trash.addEventListener('click', () => {
-            UI.deleteTodo(trash);
-            const text = target.parentElement.parentElement.children[0].children[1].value;
-            Store.removeFromLocalStorage(text);
-          });
+        const target = e.target;
+        if (target.classList.contains('del-btn')) {
+          const trash = target.parentElement.children[1];
+          // console.log(trash)
+          UI.deleteTodo(trash);
+          const text = target.parentElement.children[0].children[1].value;
+          Store.removeFromLocalStorage(text);
         }
       });
     }
@@ -68,22 +56,22 @@ export default class Logic {
        UL.addEventListener('click', (e) => {
          const inputReadonly = e.target.parentElement.children[0].children[1];
          const formerInput = e.target.parentElement.children[0].children[1].value;
-
+        console.log(e.target)
          if (e.target.classList.contains('edit')) {
            inputReadonly.removeAttribute('readonly');
            inputReadonly.focus();
-           const editBtn = inputReadonly.parentElement.parentElement.children[3];
+           const editBtn = inputReadonly.parentElement.parentElement.children[2];
            editBtn.innerHTML = 'Save';
            editBtn.classList.add('save');
            editBtn.classList.remove('edit');
          }
 
          document.querySelectorAll('.text').forEach((input) => {
-           const editbtn = input.parentElement.parentElement.children[3];
+           const editbtn = input.parentElement.parentElement.children[2];
            editbtn.addEventListener('click', () => {
              const newtodo = e.target.parentElement.children[0].children[1].value;
              if (editbtn.classList.contains('save')) { Store.editTodo(formerInput, newtodo); }
-             document.location.reload();
+            //  document.location.reload();
            });
          });
        });

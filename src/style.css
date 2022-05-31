@@ -125,9 +125,9 @@ h1 {
   z-index: 10;
 }
 
-.fa-ellipsis-v.active {
+/* .fa-ellipsis-v.active {
   display: none;
-}
+} */
 
 .edit {
   background-color: blue;
@@ -151,10 +151,9 @@ h1 {
 
 .del-btn {
   color: red;
-  display: none;
+  display: block;
 }
 
-.edit.active,
-.del-btn.active {
+.edit.active {
   display: block;
 }
