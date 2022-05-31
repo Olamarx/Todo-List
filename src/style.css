@@ -139,7 +139,7 @@ h1 {
   border-radius: 10px;
 }
 
-.save{
+.save {
   background-color: green;
   color: white;
   outline: none;
@@ -151,9 +151,6 @@ h1 {
 
 .del-btn {
   color: red;
-}
-
-.del-btn {
   display: none;
 }
 

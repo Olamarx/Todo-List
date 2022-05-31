@@ -18,9 +18,9 @@ export default class UI {
             <i class="fa fa-trash-o de del-btn" id="${array.index}" ></i>
             <button class="edit"> Edit</button>
             </li>`;
-            document.querySelector('#list').insertAdjacentHTML('beforeend', li);
-          }
-          
+      document.querySelector('#list').insertAdjacentHTML('beforeend', li);
+    }
+
     static clearField = () => {
       document.querySelector('#input').value = '';
     }

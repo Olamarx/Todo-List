@@ -24,4 +24,14 @@ export default class Storage {
     });
     localStorage.setItem('library', JSON.stringify(library));
   }
+
+  static editTodo = (former, newInput) => {
+    const arr = Storage.takingFromStorage();
+    arr.forEach((todo) => {
+      if (former === todo.task) {
+        todo.task = newInput;
+      }
+    });
+    localStorage.setItem('library', JSON.stringify(arr));
+  }
 }
