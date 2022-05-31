@@ -20,10 +20,24 @@ export default class Storage {
     library.forEach((todo) => {
       if (`${todo.task}`.trim() === text.trim()) {
         library.splice(library.indexOf(todo), 1);
+        Storage.updateIndex(library)
       }
     });
     localStorage.setItem('library', JSON.stringify(library));
   }
+
+  static updateIndex = (arr) => {
+    arr.forEach((todo, index) => {
+      todo.index = index + 1;
+    })
+    localStorage.setItem('library', JSON.stringify(arr))
+  }
+//   static updateIndex(arr) {
+//     arr.forEach((todo, index) => {
+//         todo.index = index + 1;
+//     });
+//     localStorage.setItem('Todo', JSON.stringify(arr));
+// }
 
   static editTodo = (former, newInput) => {
     const arr = Storage.takingFromStorage();
