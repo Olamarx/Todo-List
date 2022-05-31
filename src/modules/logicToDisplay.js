@@ -47,12 +47,12 @@ export default class Logic {
             ellipsis.classList.add('active');
             trash.classList.add('active');
           }
-    Array.from(document.querySelector('#list').children).forEach((child) => {
-         if (e.target.children[1] && e.target.children[2]) {
-            child.children[1].classList.remove('active')
-            child.children[2].classList.remove('active')
-         } 
-        })
+          Array.from(document.querySelector('#list').children).forEach((child) => {
+            if (e.target.children[1] && e.target.children[2]) {
+              child.children[1].classList.remove('active');
+              child.children[2].classList.remove('active');
+            }
+          });
           trash.addEventListener('click', () => {
             UI.deleteTodo(trash);
             const text = target.parentElement.parentElement.children[0].children[1].value;

@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome Books
+# Todo List
 
 In this project we are creating a live and interactive Todo List, with updating Todo.
 
