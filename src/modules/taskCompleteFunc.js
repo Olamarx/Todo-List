@@ -14,13 +14,12 @@ export default class TaskCompletedFunc {
 
       static deleteCompletedTemplate = () => {
         const arr = Storage.takingFromStorage();
-        arr.filter((todo) => todo.completed === true);
-        // arr.forEach((todo, index) => {
-        //   if (todo.completed) {
-        //     arr.splice(index, 1);
-        //     Storage.updateIndex(arr);
-        //   }
-        // });
+        arr.forEach((todo, index) => {
+          if (todo.completed) {
+            arr.splice(index, 1);
+            Storage.updateIndex(arr);
+          }
+        });
         localStorage.setItem('library', JSON.stringify(arr));
       }
 
