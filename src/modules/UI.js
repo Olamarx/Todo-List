@@ -17,10 +17,10 @@ export default class UI {
             <i class="fa fa-trash-o de del-btn" id="${array.index}" ></i>
             <button class="edit"> Edit</button>
             </li>`;
-            document.querySelector('#list').insertAdjacentHTML('beforeend', li);
-          }
-          
-          // <i class="fas fa-ellipsis-v options"></i>
+      document.querySelector('#list').insertAdjacentHTML('beforeend', li);
+    }
+
+    // <i class="fas fa-ellipsis-v options"></i>
     static clearField = () => {
       document.querySelector('#input').value = '';
     }

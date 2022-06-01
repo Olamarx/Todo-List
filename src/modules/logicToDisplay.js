@@ -39,10 +39,9 @@ export default class Logic {
     static displayDelete = () => {
       const UL = document.querySelector('#list');
       UL.addEventListener('click', (e) => {
-        const target = e.target;
+        const { target } = e;
         if (target.classList.contains('del-btn')) {
           const trash = target.parentElement.children[1];
-          // console.log(trash)
           UI.deleteTodo(trash);
           const text = target.parentElement.children[0].children[1].value;
           Store.removeFromLocalStorage(text);
@@ -56,7 +55,6 @@ export default class Logic {
        UL.addEventListener('click', (e) => {
          const inputReadonly = e.target.parentElement.children[0].children[1];
          const formerInput = e.target.parentElement.children[0].children[1].value;
-        console.log(e.target)
          if (e.target.classList.contains('edit')) {
            inputReadonly.removeAttribute('readonly');
            inputReadonly.focus();
@@ -71,7 +69,7 @@ export default class Logic {
            editbtn.addEventListener('click', () => {
              const newtodo = e.target.parentElement.children[0].children[1].value;
              if (editbtn.classList.contains('save')) { Store.editTodo(formerInput, newtodo); }
-            //  document.location.reload();
+             document.location.reload();
            });
          });
        });
