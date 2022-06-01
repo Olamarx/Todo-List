@@ -110,6 +110,7 @@ h1 {
   width: 80%;
   border-radius: 5px;
   min-width: 30px;
+  margin-left: 10px;
 }
 
 .text.active {
@@ -124,9 +125,9 @@ h1 {
   z-index: 10;
 }
 
-.fa-ellipsis-v.active {
+/* .fa-ellipsis-v.active {
   display: none;
-}
+} */
 
 .edit {
   background-color: blue;
@@ -138,16 +139,21 @@ h1 {
   border-radius: 10px;
 }
 
+.save {
+  background-color: green;
+  color: white;
+  outline: none;
+  border: none;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+}
+
 .del-btn {
   color: red;
+  display: block;
 }
 
-.edit,
-.del-btn {
-  display: none;
-}
-
-.edit.active,
-.del-btn.active {
+.edit.active {
   display: block;
 }
