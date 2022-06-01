@@ -1,33 +1,46 @@
 import Storage from './localStorage.js';
+import UI from './UI.js';
 
-export default class TaskCompletedFunc{
-
-    // static taskDefault = () => {
-    //     const arr = Storeage.takingFromStorage();
-    //     arr.forEach((task) => {
-    //       task.completed = true;
-    //     });
-    //   localStorage.setItem('library', JSON.stringify(arr));
-    //   }
-
-    static checkBox = () => {
-        const UL = document.querySelector('#list');
-        UL.addEventListener('click', (e) => {
-        const checkBoxBtn = e.target.parentElement.parentElement.children[0].children[0]
-        if (checkBoxBtn && checkBoxBtn.checked) {
-            console.log('Up and jiggy')
-            const arr = Storage.takingFromStorage();
-            // arr[]
-            task.completed = true;
-            Storage.updateIndex()
-        
+export default class TaskCompletedFunc {
+    static clearCompleted = (describe) => {
+      const arr = Storage.takingFromStorage();
+      arr.forEach((todo) => {
+        if (describe === todo.task) {
+          todo.completed = !todo.completed;
         }
-    //     if (checkBoxBtn.classList.contains('checker')) {
-    //         console.log('We are on point')
-    //     }
-       }
-       )
-
+      });
+      localStorage.setItem('library', JSON.stringify(arr));
     }
 
+      static deleteCompletedTemplate = () => {
+        const arr = Storage.takingFromStorage();
+        arr.filter((todo) => todo.completed === true);
+        // arr.forEach((todo, index) => {
+        //   if (todo.completed) {
+        //     arr.splice(index, 1);
+        //     Storage.updateIndex(arr);
+        //   }
+        // });
+        localStorage.setItem('library', JSON.stringify(arr));
+      }
+
+    static checkBox = () => {
+      document.querySelectorAll('#list').forEach((check) => {
+        check.addEventListener('change', (e) => {
+          if (e.target.classList.contains('checker')) {
+            const val = e.target.parentElement.parentElement.children[0].children[1].value;
+            TaskCompletedFunc.clearCompleted(val);
+          }
+        });
+      });
+    }
+
+    static deleteAllchecked = () => {
+      const clearCompleted = document.querySelector('.footer__btn');
+      clearCompleted.addEventListener('click', () => {
+        const completedTask = Array.from(document.querySelectorAll('.checker:checked'));
+        UI.clearTodoComp(completedTask);
+        TaskCompletedFunc.deleteCompletedTemplate();
+      });
+    }
 }

@@ -29,4 +29,10 @@ export default class UI {
         element.parentElement.remove();
       }
     }
+
+    static clearTodoComp = (arr) => {
+      arr.forEach((element) => {
+        element.parentElement.parentElement.remove();
+      });
+    }
 }
