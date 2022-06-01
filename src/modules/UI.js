@@ -20,7 +20,6 @@ export default class UI {
       document.querySelector('#list').insertAdjacentHTML('beforeend', li);
     }
 
-    // <i class="fas fa-ellipsis-v options"></i>
     static clearField = () => {
       document.querySelector('#input').value = '';
     }
