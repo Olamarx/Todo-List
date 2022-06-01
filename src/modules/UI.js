@@ -20,7 +20,6 @@ export default class UI {
       document.querySelector('#list').insertAdjacentHTML('beforeend', li);
     }
 
-    // <i class="fas fa-ellipsis-v options"></i>
     static clearField = () => {
       document.querySelector('#input').value = '';
     }
@@ -29,5 +28,11 @@ export default class UI {
       if (element.classList.contains('del-btn')) {
         element.parentElement.remove();
       }
+    }
+
+    static clearTodoComp = (arr) => {
+      arr.forEach((element) => {
+        element.parentElement.parentElement.remove();
+      });
     }
 }
