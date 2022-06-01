@@ -3,6 +3,7 @@ import _ from 'lodash';
 import './style.css';
 import Logic from './modules/logicToDisplay.js';
 import TaskFunc from './modules/taskCompleteFunc.js'
+import ClearAll from './modules/clearAll.js'
 
 Logic.loadUponReload()
 Logic.enterFunc()
@@ -12,3 +13,4 @@ Logic.edit()
 TaskFunc.checkBox()
 TaskFunc.deleteAllchecked()
 TaskFunc.reloadFunc()
+ClearAll.clearBtnFun()
