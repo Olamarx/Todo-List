@@ -42,4 +42,14 @@ export default class TaskCompletedFunc {
         TaskCompletedFunc.deleteCompletedTemplate();
       });
     }
+
+    static reloadFunc = () => {
+      const arr = Storage.takingFromStorage();
+      arr.forEach((todo) => {
+        if (document.location.reload) {
+          todo.completed = false;
+        }
+      });
+      localStorage.setItem('library', JSON.stringify(arr));
+    }
 }
