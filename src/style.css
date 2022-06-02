@@ -32,7 +32,7 @@ main {
   margin-top: 150px;
   box-shadow: 1px 5px 18px grey, 1px 5px 18px grey;
   width: 50%;
-  min-width: 500px;
+  min-width: 300px;
 }
 
 .main__header {
