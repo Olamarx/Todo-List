@@ -77,7 +77,9 @@ h1 {
 }
 
 .div-left {
-  width: 90%;
+  width: 200px;
+  min-width: 40vw;
+  max-width: 90%;
   display: flex;
   align-items: center;
 }
@@ -95,22 +97,15 @@ h1 {
   font-size: 20px;
 }
 
-.what-to-do {
-  border: none;
-  outline: none;
-  resize: none;
-  width: 80%;
-}
-
 .text {
   border: none;
   outline: none;
   overflow: visible;
   height: 30px;
   font-size: 15px;
-  width: 80%;
+  width: 65%;
   border-radius: 5px;
-  min-width: 30px;
+  min-width: 20px;
   margin-left: 10px;
 }
 
