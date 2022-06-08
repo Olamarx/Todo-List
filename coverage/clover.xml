@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1654714903133" clover="3.2.0">
+  <project timestamp="1654714903134" name="All files">
+    <metrics statements="24" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0" elements="38" coveredelements="3" complexity="0" loc="24" ncloc="24" packages="1" files="1" classes="1"/>
+    <file name="localStorage.js" path="C:\Microverse Projects\Javascript Module\Todo-List\src\modules\localStorage.js">
+      <metrics statements="24" coveredstatements="3" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <line num="4" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="47" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
