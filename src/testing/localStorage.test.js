@@ -41,5 +41,4 @@ describe('Test for add and delete functions', () => {
     // Assert
     expect(library).toBe(library);
   });
-
 });
