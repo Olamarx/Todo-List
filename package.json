@@ -4,7 +4,7 @@
   "description": "If you are not familiar with linters, read [root level README](../README.md).",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -22,6 +22,7 @@
   "devDependencies": {
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
