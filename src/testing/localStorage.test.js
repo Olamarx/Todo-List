@@ -131,8 +131,7 @@ describe('Test for add, edit, completed, delete, clear all completed functions',
     library.push(content3);
     library.push(content4);
     library.push(content5);
-
-    const filt = library.filter((todo) => todo.completed === true)
+    const filt = library.filter((todo) => todo.completed === true);
     // Assert
     expect(filt[0].completed).toBe(true);
     expect(filt[0].completed).not.toBeFalsy();
@@ -140,6 +139,5 @@ describe('Test for add, edit, completed, delete, clear all completed functions',
     expect(filt[1].completed).not.toBeFalsy();
     expect(filt[2].completed).toBe(true);
     expect(filt[2].completed).not.toBeFalsy();
-    });
-
+  });
 });
