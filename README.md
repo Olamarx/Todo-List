@@ -2,7 +2,7 @@
 
 # Todo List
 
-In this project we are creating a live and interactive Todo List, with updating Todo.
+In this project, I created a live and interactive Todo List App. It has features of adding to the list, removing from the list and editing the available list.
 
 ## Built With
 
