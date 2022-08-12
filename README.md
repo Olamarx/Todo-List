@@ -2,7 +2,7 @@
 
 # Todo List
 
-In this project, I created a live and interactive Todo List App. It has features of adding to the list, removing from the list and editing the available list.
+In this project, I created a live and interactive Todo List App. It has features of adding to the list, removing from the list and editing the available list. It also filters by checkbox, every checkedbox will filter it out upon clicking 'clear all completed'.
 
 ## Built With
 
