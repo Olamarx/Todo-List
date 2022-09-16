@@ -1,4 +1,4 @@
-export default class Storage {
+class Storage {
   static takingFromStorage() {
     let library;
     if (!localStorage.getItem('library')) {
@@ -43,3 +43,5 @@ export default class Storage {
     localStorage.setItem('library', JSON.stringify(arr));
   }
 }
+
+module.exports = Storage;
